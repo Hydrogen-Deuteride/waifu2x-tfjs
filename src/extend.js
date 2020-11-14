@@ -1,4 +1,4 @@
-import * as tf from '@tensorflow/tfjs';
+let tf = require('@tensorflow/tfjs');
 
 Image.open = async (fp, mode='r') => {
     return await new Promise((resolve,reject) => {
@@ -117,6 +117,5 @@ tf.Tensor.prototype.convert = function(mode) {
     })
 };
 
-export {
-    tf, Image
-}
+module.exports.tf = tf;
+module.exports.Image = Image;
