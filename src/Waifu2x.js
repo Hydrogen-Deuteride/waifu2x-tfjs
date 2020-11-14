@@ -1,4 +1,7 @@
-import { tf, Image } from './extend';
+let imp = require('./extend');
+let tf = imp.tf;
+let Image = imp.Image;
+imp = null;
 
 let model_paths_obj = {};
 
@@ -189,7 +192,7 @@ class _Waifu2x {
 
 }
 
-export default async function Waifu2x(model_paths, config) {
+async function Waifu2x(model_paths, config) {
     if(typeof(config) === 'object') {
         if(config.backend === 'cpu') {
             tf.setBackend('cpu');
@@ -201,3 +204,5 @@ export default async function Waifu2x(model_paths, config) {
     await waifu2x.__init__(model_paths);
     return waifu2x;
 }
+
+module.exports = Waifu2x;
