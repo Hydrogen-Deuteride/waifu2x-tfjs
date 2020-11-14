@@ -23,7 +23,7 @@
   "scripts": {
   },
   "dependencies": {
-    "@tensorflow/tfjs": "^0.12.4"
+    "@tensorflow/tfjs": "0.12.4"
   },
   "devDependencies": {
   }
